@@ -1,4 +1,7 @@
 <%@ page import="java.sql.*"%>
+<%@ page import="java.io.PrintWriter" %>
+
+
 
 <%
 	Connection connection = null;
@@ -8,6 +11,7 @@
 	}
 	catch(Exception e)
 	{
-		System.out.println(e);
+		PrintWriter out = response.getWriter();
+        e.printStackTrace(new PrintWriter(out));
 	}
 %>
